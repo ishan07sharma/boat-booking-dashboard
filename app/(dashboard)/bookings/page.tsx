@@ -65,23 +65,7 @@ const page = async() => {
   return (
     <div>
       <h1>Bookings</h1>
-      {/* {arr.map((booking,index)=>(
-        <li key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-        <span><strong>Passenger 1:</strong> {booking.passenger1}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Passenger 2:</strong> {booking.passenger2}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Boat Name:</strong> {booking.boatname}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Boat Price:</strong> ₹{booking.boatprice}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Extra Price:</strong> ₹{booking.extraprice}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Guide:</strong> {booking.guide ? "Yes" : "No"}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Insurance:</strong> {booking.insurance ? "Yes" : "No"}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Transport:</strong> {booking.transport.join(", ")}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Meals:</strong> {booking.meals.join(", ")}</span>
-        <span style={{ marginLeft: '20px' }}><strong>Phone:</strong> {booking.phone}</span>
-        
-      </li>
       
-      ))
-        } */}
         <div className="overflow-x-auto">
   <table className="table table-xs">
     <thead>
