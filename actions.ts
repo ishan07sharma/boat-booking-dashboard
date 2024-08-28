@@ -10,14 +10,13 @@ import { useState } from "react";
 import { useAppSelector } from "./lib/hooks";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB_zlBLoLQE42DEP28hMD-FMoITQYozt5o",
-  authDomain: "boat-app-26efd.firebaseapp.com",
-  projectId: "boat-app-26efd",
-  storageBucket: "boat-app-26efd.appspot.com",
-  messagingSenderId: "511621917310",
-  appId: "1:511621917310:web:415850ae844c84d60a462f"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
-
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
