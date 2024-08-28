@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import firebase from "firebase/compat/app";
 //import firebase from "firebase/app";
 // Required for side-effects
@@ -36,9 +37,11 @@ interface passengerdata{
    meals:string[];
    phone:string;
 }
-const page = async() => {
-
-  let arr:passengerdata[]=[];
+const page = () => {
+  const [bookings, setBookings] = useState<passengerdata[]>([]);
+  useEffect(() => {
+    const fetchdata=async()=>{
+      let arr:passengerdata[]=[];
 
  await db.collection("bookings").get().then((item)=>{
   item.forEach((doc)=>{
@@ -62,6 +65,12 @@ const page = async() => {
   //console.log(arr);
   
  });
+ setBookings(arr);
+    }
+    fetchdata();
+    
+  }, [])
+  
   return (
     <div>
       <h1>Bookings</h1>
@@ -84,7 +93,7 @@ const page = async() => {
       </tr>
     </thead>
     <tbody>
-    {arr.map((booking,index:number)=>(
+    {bookings.map((booking,index:number)=>(
         <tr key={index}>
           <th>{index+1}</th>
           <td> {booking.boatname}</td>
