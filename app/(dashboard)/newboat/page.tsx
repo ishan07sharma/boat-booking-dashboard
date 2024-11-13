@@ -79,9 +79,9 @@ const page = () => {
       let price="";
 
 
-      useEffect(() => {
-        validateForm();
-    }, [boatname, capacity,details,price,file,meals,safetyFeatures,amenities]);
+    //   useEffect(() => {
+    //     validateForm();
+    // }, [boatname, capacity,details,price,file,meals,safetyFeatures,amenities]);
     // Validate form
     const validateForm = () => {
         let errors:Errors = {};
@@ -163,8 +163,8 @@ const page = () => {
    
     // const choices=useAppSelector((state)=>state.choices);
     const uploaddata=async(formData:any)=>{
-      console.log("reached");
-      
+      //console.log("reached");
+      validateForm();
       if(isFormValid){
         console.log("here");
         
